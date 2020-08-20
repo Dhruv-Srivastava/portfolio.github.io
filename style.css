@@ -1,0 +1,129 @@
+/* Global view */
+body {
+    font-family: 'Asap', sans-serif;
+    background-color: #EBEBEB;
+    background-image: url(images/Logo\ Background.png);
+}
+.header-container {
+    background-color: rgb(60, 60, 60);
+    min-height: 100px;
+    position: fixed;
+    width: 100%;
+}
+header {
+    max-width: 1024px;
+    min-height: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+}
+span.name {
+    color: white;
+    font-weight: 700;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    margin-right: 20px;
+    font-size: 15px;
+}
+.mobwrapper {display:none;}
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1024px;
+    min-height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 140px;
+}
+
+.col {
+    background-color: rgb(43,226,147);
+    width: 30%;
+    margin-bottom: 40px;
+}
+.col p {
+    color: white;
+    font-size-adjust: 14px;
+    padding: 20px 25px;
+    line-height: 20px;
+}
+.col p::first-line {
+    font-weight: 700;
+}
+
+/* Hiding 10th block from everywhere */
+.hide-desktop-only {
+    display: none;
+}
+.col img {
+    width: 100%;
+    height: auto;
+}
+/* If the browser size is less than 768px then we should change its color.For this we use a media querry */
+/* Tablet view */
+@media (max-width:768px) {
+    .col {
+        width: 45%;
+    }
+
+    .hide-desktop-only{display:block;} /*Since in tab view we can have the 10th block aas there would be 2 in each row therefore adding it again*/
+    header {
+        text-align: center
+    }
+    /* making a burger menu */
+    nav {
+        display: none;
+    }
+    nav a {
+        display: block; margin-right: 0;
+    }
+    .logo {
+        margin: 40px 0;
+        padding-top: 10px;
+    }
+    .header-container {
+        position: relative;
+        margin-top: 0;
+    }
+    .container{padding-top: 40px;}
+    .mobwrapper {
+        display:block;
+        padding-right: 30px;
+    }
+    .mobnav {display: none;
+        position: absolute;
+        padding-top: 10px;
+
+    }
+
+    .navbutton {
+        display: block;
+        text-decoration: none;
+        color: white ;
+        background-color: rgba(255, 127, 80, 0.829);
+        margin-right: 50px;  /*margin-right doesnt work because mob nav is fixed so we use negative margin left*/
+        margin-left: -75px;
+        padding: 15px 30px;
+
+    }
+
+}
+
+/* Mobile view */
+@media (max-width:400px) {
+    .col {
+        width: 100%;
+    }
+
+    .hide-mobile-only {
+        display:none;
+    }
+}
